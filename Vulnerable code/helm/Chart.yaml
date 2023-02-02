@@ -1,0 +1,11 @@
+apiVersion: v2
+name: api-gateway
+description: A Helm chart for api-gateway
+version: 0.2.32
+appVersion: "0.2.69"
+
+#apiVersion: v2
+#name: wordpress
+#description: A Helm chart for WordPress services
+#version: 1.1.1
+#appVersion: "3.8.320"
