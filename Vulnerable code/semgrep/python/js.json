@@ -1,0 +1,210 @@
+{
+  "errors": [
+    {
+      "code": 3,
+      "help": "If the code appears to be valid, this may be a semgrep bug.",
+      "level": "warn",
+      "long_msg": "Could not parse dictionaries as javascript",
+      "short_msg": "parse error",
+      "spans": [
+        {
+          "context_end": null,
+          "context_start": null,
+          "end": {
+            "col": 195,
+            "line": 1
+          },
+          "file": "/vulpy/.idea/dictionaries",
+          "source_hash": "7063087468a9e3845761308f5d1bf04cb5d044e1b7346a27c555f748df44f367",
+          "start": {
+            "col": 1,
+            "line": 1
+          }
+        }
+      ],
+      "type": "SourceParseError"
+    },
+    {
+      "code": 3,
+      "help": "If the code appears to be valid, this may be a semgrep bug.",
+      "level": "warn",
+      "long_msg": "Could not parse LICENSE as javascript",
+      "short_msg": "parse error",
+      "spans": [
+        {
+          "context_end": null,
+          "context_start": null,
+          "end": {
+            "col": 4,
+            "line": 1
+          },
+          "file": "/vulpy/LICENSE",
+          "source_hash": "3980dd18fddaeb5fe8c8b17a85ba7ddbe2ec31d2d1170329053f3a89eccb8325",
+          "start": {
+            "col": 1,
+            "line": 1
+          }
+        }
+      ],
+      "type": "SourceParseError"
+    },
+    {
+      "code": 3,
+      "help": "If the code appears to be valid, this may be a semgrep bug.",
+      "level": "warn",
+      "long_msg": "Could not parse LICENSE as typescript",
+      "short_msg": "parse error",
+      "spans": [
+        {
+          "context_end": null,
+          "context_start": null,
+          "end": {
+            "col": 4,
+            "line": 1
+          },
+          "file": "/vulpy/LICENSE",
+          "source_hash": "3980dd18fddaeb5fe8c8b17a85ba7ddbe2ec31d2d1170329053f3a89eccb8325",
+          "start": {
+            "col": 1,
+            "line": 1
+          }
+        }
+      ],
+      "type": "SourceParseError"
+    },
+    {
+      "code": 3,
+      "help": "If the code appears to be valid, this may be a semgrep bug.",
+      "level": "warn",
+      "long_msg": "Could not parse dictionaries as typescript",
+      "short_msg": "parse error",
+      "spans": [
+        {
+          "context_end": null,
+          "context_start": null,
+          "end": {
+            "col": 195,
+            "line": 1
+          },
+          "file": "/vulpy/.idea/dictionaries",
+          "source_hash": "7063087468a9e3845761308f5d1bf04cb5d044e1b7346a27c555f748df44f367",
+          "start": {
+            "col": 1,
+            "line": 1
+          }
+        }
+      ],
+      "type": "SourceParseError"
+    }
+  ],
+  "njsscan_version": "0.2.9",
+  "nodejs": {},
+  "templates": {
+    "squirrelly_template": {
+      "files": [
+        {
+          "file_path": "/vulpy/good/templates/posts.view.html",
+          "match_lines": [
+            23,
+            23
+          ],
+          "match_position": [
+            779,
+            801
+          ],
+          "match_string": "{{ post.text | safe }}"
+        },
+        {
+          "file_path": "/vulpy/bad/templates/posts.view.html",
+          "match_lines": [
+            23,
+            23
+          ],
+          "match_position": [
+            779,
+            801
+          ],
+          "match_string": "{{ post.text | safe }}"
+        },
+        {
+          "file_path": "/vulpy/reports/javascript.json",
+          "match_lines": [
+            68,
+            68
+          ],
+          "match_position": [
+            2032,
+            2054
+          ],
+          "match_string": "{{ post.text | safe }}"
+        },
+        {
+          "file_path": "/vulpy/reports/javascript.json",
+          "match_lines": [
+            84,
+            84
+          ],
+          "match_position": [
+            2533,
+            2553
+          ],
+          "match_string": "{{ message | safe }}"
+        },
+        {
+          "file_path": "/vulpy/reports/javascript.json",
+          "match_lines": [
+            36,
+            36
+          ],
+          "match_position": [
+            1035,
+            1057
+          ],
+          "match_string": "{{ post.text | safe }}"
+        },
+        {
+          "file_path": "/vulpy/reports/javascript.json",
+          "match_lines": [
+            52,
+            52
+          ],
+          "match_position": [
+            1537,
+            1557
+          ],
+          "match_string": "{{ message | safe }}"
+        },
+        {
+          "file_path": "/vulpy/bad/templates/messages.html",
+          "match_lines": [
+            8,
+            8
+          ],
+          "match_position": [
+            351,
+            371
+          ],
+          "match_string": "{{ message | safe }}"
+        },
+        {
+          "file_path": "/vulpy/good/templates/messages.html",
+          "match_lines": [
+            8,
+            8
+          ],
+          "match_position": [
+            351,
+            371
+          ],
+          "match_string": "{{ message | safe }}"
+        }
+      ],
+      "metadata": {
+        "cwe": "CWE-79 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "description": "The Squirrelly.js template has an unescaped variable. Untrusted user input passed to this variable results in Cross Site Scripting (XSS)",
+        "owasp": "A1: Injection",
+        "severity": "ERROR"
+      }
+    }
+  }
+}

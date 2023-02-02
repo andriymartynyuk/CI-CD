@@ -1,0 +1,19 @@
+---
+{{- if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: "{{ .Chart.Name }}"
+spec:
+  endpoints:
+  - port: http
+    path: {{ .Values.serviceMonitor.metricPath }}
+    interval: {{ .Values.serviceMonitor.interval }}
+  jobLabel: app.kubernetes.io/name
+  namespaceSelector:
+    matchNames:
+    - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      app: "{{ .Chart.Name }}"
+{{- end }}

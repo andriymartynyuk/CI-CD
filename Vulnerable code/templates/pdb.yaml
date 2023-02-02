@@ -1,0 +1,20 @@
+{{- if .Values.pdb.enabled }}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: "{{ .Chart.Name }}"
+  labels:
+    app: "{{ .Chart.Name }}"
+spec:
+  minAvailable: {{ .Values.pdb.minAvailable }}
+  selector:
+    matchLabels:
+      app: "{{ .Chart.Name }}"
+{{- end }}
+
+#kind: ConfigMap
+#apiVersion: v1
+#metadata:
+#  name: nginx-config
+#  namespace: ingress-nginx
+#data:
