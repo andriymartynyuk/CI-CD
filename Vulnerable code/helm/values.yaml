@@ -1,6 +1,0 @@
-serviceMonitor:
-  enabled: true
-
-pdb:
-  enabled: true
-  minAvailable: "100%%"
